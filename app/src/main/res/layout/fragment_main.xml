@@ -43,6 +43,7 @@
                 android:text="@string/image_of_the_day" />
         </FrameLayout>
 
+<!--        RecyclerView will recycle views that come off screen-->
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/asteroid_recycler"
             android:layout_width="0dp"
