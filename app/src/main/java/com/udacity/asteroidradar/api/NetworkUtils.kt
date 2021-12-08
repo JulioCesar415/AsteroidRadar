@@ -1,5 +1,7 @@
 package com.udacity.asteroidradar.api
 
+import android.widget.TextView
+import androidx.recyclerview.widget.RecyclerView
 import com.udacity.asteroidradar.Asteroid
 import com.udacity.asteroidradar.Constants
 import org.json.JSONObject
@@ -55,3 +57,5 @@ private fun getNextSevenDaysFormattedDates(): ArrayList<String> {
 
     return formattedDateList
 }
+
+class TextItemViewHolder(val textView: TextView): RecyclerView.ViewHolder(textView)
