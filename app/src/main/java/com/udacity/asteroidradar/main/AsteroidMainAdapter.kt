@@ -7,11 +7,12 @@ import androidx.recyclerview.widget.RecyclerView
 import com.udacity.asteroidradar.Asteroid
 import com.udacity.asteroidradar.R
 import com.udacity.asteroidradar.api.TextItemViewHolder
+import com.udacity.asteroidradar.database.DatabaseEntities
 
 class AsteroidMainAdapter : RecyclerView.Adapter<TextItemViewHolder>(){
 
 //    define data source
-    var data = listOf<Asteroid>()
+    var data = listOf<DatabaseEntities>()
 //    tell RecyclerView when data displaying has changed
 //    setter updates field, set value in setter. call adapter method to tell recyclerView entire data set
 //    may have changed and call recyclerView to redraw everything on screen
