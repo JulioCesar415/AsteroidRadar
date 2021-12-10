@@ -4,6 +4,8 @@ import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
+//data class marked @Entity holds the values that will be used throughout app.
+// these values have column info which is going to be used for building DAO
 @Entity(tableName = "asteroid_detail_table")
 data class DatabaseEntities(
     @PrimaryKey(autoGenerate = true)

@@ -5,7 +5,7 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 
-// abstract class that extends RoomDatabase
+// abstract class that extends RoomDatabase. This is needed to use SQLite database.
 @Database(entities = [DatabaseEntities::class], version = 1, exportSchema = false)
 abstract class AsteroidDatabase : RoomDatabase(){
 //    abstract val that returns AsteroidDatbaseDao
