@@ -52,7 +52,7 @@ class MainFragment : Fragment() {
 //        tell adapter what data it should adapt
         viewModel.asteroids.observe(viewLifecycleOwner, Observer {
             it?.let {
-                adapter.data = it
+                adapter.submitList(it)
             }
         })
 

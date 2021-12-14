@@ -3,6 +3,8 @@ package com.udacity.asteroidradar
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.databinding.BindingAdapter
+import androidx.room.Database
+import com.udacity.asteroidradar.database.DatabaseEntities
 
 @BindingAdapter("statusIcon")
 fun bindAsteroidStatusImage(imageView: ImageView, isHazardous: Boolean) {
@@ -38,4 +40,28 @@ fun bindTextViewToKmUnit(textView: TextView, number: Double) {
 fun bindTextViewToDisplayVelocity(textView: TextView, number: Double) {
     val context = textView.context
     textView.text = String.format(context.getString(R.string.km_s_unit_format), number)
+}
+
+@BindingAdapter("asteroidName")
+fun TextView.setAsteroidName(item: DatabaseEntities?){
+    item?.let {
+        text = item.codename.toString()
+    }
+}
+
+@BindingAdapter("dateApproach")
+fun TextView.setApproachDate(item: DatabaseEntities?){
+    item?.let {
+        text = item.closeApproachDate.toString()
+    }
+}
+
+@BindingAdapter("imageHazardous")
+fun ImageView.setImageHazardous(item: DatabaseEntities?){
+    item?.let {
+        setImageResource(when (item.isPotentiallyHazardous){
+            true -> R.drawable.ic_status_potentially_hazardous
+            else -> R.drawable.ic_status_normal
+        })
+    }
 }
